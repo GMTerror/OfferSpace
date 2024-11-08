@@ -1,0 +1,10 @@
+{% include 'header.html' %}
+<body>
+    <section>
+        <p class="header_"></p>
+        <object data={{url_for('static', filename=offer.file_src)}} width="80%" height="700px">
+            <p>Unable to display PDF file. <a href={{url_for('static', filename=offer.file_src)}}>Download</a> instead.</p>
+        </object>
+    </section>
+</body>
+{% include 'footer.html' %}

@@ -1,0 +1,55 @@
+{% include 'header.html' %}
+<body>
+    <section id="head">
+        <span class="header">Fonsectetuer adipiscing elit</span>
+        <span class="header">Lorem ipsum odor amet</span>
+    </section>
+    <hr class="rounded">
+    {% if featured != [] %}
+        <section id="featured">
+            <p class="title">FEATURED OFFERS</p>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for f in featured %}
+                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ f.img_url }}" class="d-block w-100" alt="Image {{ loop.index }}">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{f.store}}</h5>
+                                <p>{{f.offer_title}}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <hr class="rounded">
+    {% endif %}
+    <section id="store">
+        <p class="title">SHOP BY STORE</p>
+        <div class="container-fluid store">
+            <div class="row">
+                {% for store in stores %}
+                {% if loop.index0 % 4 == 0 and not loop.first %}
+                    </div><div class="row center">
+                {% endif %}
+                <div class="col-md-3 mb-3">
+                    <button type="button" class="btn btn-block" onclick="location.href='{{ url_for('store', name=store) }}'">
+                        {{ store }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+<script src={{url_for('static', filename='script.js')}}></script>
+{% include 'footer.html' %}
+</html>

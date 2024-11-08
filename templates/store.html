@@ -1,0 +1,53 @@
+{% include 'header.html' %}
+<body>
+    <section id="s-head">
+        <span class="header_">{{name}}</span>
+    </section>
+    <hr class="rounded">
+    <section>
+        <p class="title">VALID OFFERS</p>
+        <div class="container-fluid store">
+            <div class="row">
+                {% for off in val %}
+                {% if loop.index0 % 4 == 0 and not loop.first %}
+                    </div><div class="row center">
+                {% endif %}
+                <div class="col-md-3 mb-3">
+                    <a href={{url_for('offer', off_title=off.offer_title)}}>
+                        <ul class="ul">
+                            <img width="200vw" src={{off.img_url}}>
+                        </ul>
+                        <ul class="ul">
+                            <p class="off_title">{{off.offer_title}}</p>
+                        </ul>
+                    </a>
+                </div>
+                {% endfor %}
+                {% if val == [] %}<p class="no-off">NO OFFER AVAILABLE CURRENTLY</p>{% endif %}
+            </div>
+        </div>
+    </section>
+    <hr class="rounded">
+    <section>
+        <p class="title">EXPIRED OFFERS</p>
+        <div class="container-fluid store">
+            <div class="row">
+                {% for off in exp %}
+                {% if loop.index0 % 6 == 0 and not loop.first %}
+                    </div><div class="row center">
+                {% endif %}
+                <div class="col-md-2 mb-3">
+                    <ul class="ul">
+                        <img width="125vw" src={{off.img_url}}>
+                    </ul>
+                    <ul class="ul">
+                        <p class="off_title">{{off.offer_title}}</p>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{% include 'footer.html' %}

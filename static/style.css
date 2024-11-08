@@ -1,0 +1,266 @@
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+    100% {
+    background-position: 50px 50px;
+    }
+}
+@-moz-keyframes bg-scrolling-reverse {
+    100% {
+    background-position: 50px 50px;
+    }
+}
+@-o-keyframes bg-scrolling-reverse {
+    100% {
+    background-position: 50px 50px;
+    }
+}
+@keyframes bg-scrolling-reverse {
+    100% {
+    background-position: 50px 50px;
+    }
+}
+@-webkit-keyframes bg-scrolling {
+    0% {
+    background-position: 50px 50px;
+    }
+}
+@-moz-keyframes bg-scrolling {
+    0% {
+    background-position: 50px 50px;
+    }
+}
+@-o-keyframes bg-scrolling {
+    0% {
+    background-position: 50px 50px;
+    }
+}
+@keyframes bg-scrolling {
+    0% {
+    background-position: 50px 50px;
+    }
+}
+  /* Main styles */
+body {
+    margin-top: 13.5rem;
+    font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+    text-align: center;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iNTAiIHkyPSI1MCIgc3Ryb2tlPSIjRjBGMEYwIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNTAiIHkxPSIwIiB4Mj0iMCIgeTI9IjUwIiBzdHJva2U9IiNGMEYwRjAiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K") repeat 0 0;
+    -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+    -moz-animation: bg-scrolling-reverse 0.92s infinite;
+    -o-animation: bg-scrolling-reverse 0.92s infinite;
+    animation: bg-scrolling-reverse 0.92s infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    margin: 0;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradient colors */
+    border-radius: 15px; /* Rounded edges */
+    margin: 20px auto; /* Margin on each side */
+    padding: 10px 20px; /* Padding for top and bottom */
+    width: fit-content;
+    font-family: Kanit;
+}
+
+.container {
+    max-width: 1200px; /* Max width for the navbar */
+    margin: 0 auto; /* Center the navbar */
+}
+
+.nav-list {
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Space items evenly */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-list li {
+    flex: 1; /* Allow items to grow */
+    text-align: center; /* Center the text */
+}
+
+.nav-list a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 20px 15px; /* Padding for links */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.nav-list a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Change background on hover */
+    border-radius: 5px; /* Rounded hover effect */
+}
+
+.logo {
+    margin-right: 10px;
+    font-size: 20px;
+    font-family: Orbitron;
+    font-weight: 800 !important;
+    color: white;
+}
+
+.line {
+    background: black;
+    width: 2px;
+    margin: 0 25px;
+}
+
+#head {
+    margin: 75px auto;
+    width: fit-content;
+}
+
+.header {
+    font-family: Audiowide;
+    font-weight: 800;
+    font-size: 5.5vw;
+    width: fit-content;
+    margin: 0 auto;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.rounded {
+    border: 0;
+    border-top: 2px solid #000;
+    border-radius: 5px;
+    width: 25vw;
+    margin: 20px auto;
+}
+
+section {
+    margin: 50px;
+}
+
+.title   {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 3.5vw;
+    font-family: Itim;
+    font-weight: bolder;
+}
+
+.carousel {
+    width: 45vw;
+    margin: 50px auto;
+}
+
+.carousel-caption {
+    font-family: Audiowide;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.row {
+    margin: 50px auto;
+}
+
+.btn {
+    width: 20vw;
+    padding: 15px;
+    font-size: 20px;
+    font-family: Kanit;
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    color: white;
+    border: black;
+    border-style: solid;
+}
+
+#foot {
+    background-color: rgb(90, 90, 90);
+    margin: 0 !important;
+    margin-bottom: 0;
+}
+
+#footer {
+    background-color: black;
+    color: white;
+    margin: 0 !important;
+    font-family: Kanit;
+}
+
+#footer p {
+    margin: 0;
+    padding: 15px 0;
+}
+
+.center {
+    justify-content: center;
+    display: flex;
+}
+
+.store {
+    margin: 30px 0;
+}
+
+#s-head .header {
+    font-size: 4.5vw;
+    font-weight: 900;
+}
+
+.off_title {
+    font-size: 10px;
+    font-weight: bolder;
+    text-decoration: none !important;
+    text-decoration-line: none;
+}
+
+.ul {
+    padding: 0;
+    border: #000;
+    border-style: solid;
+    border-width: .5px;
+    padding: 12px 0;
+    margin: 0;
+}
+
+.no-off {
+    font-family: Anton SC;
+    font-size: 4vw;
+}
+
+.header_ {
+    font-family: Ubuntu;
+    font-weight: 800;
+    font-size: 4.5vw;
+    width: fit-content;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-list a {
+        font-size: 10px;
+        padding: 15px 10px;
+    }
+
+    .btn {
+        width: 65vw;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .carousel {
+        width: 45vw;
+        margin: 35px auto;
+    }
+
+    .header {
+        font-size: 5.75vw;
+    }
+}
