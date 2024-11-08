@@ -207,8 +207,6 @@ section {
 .off_title {
     font-size: 10px;
     font-weight: bolder;
-    text-decoration: none !important;
-    text-decoration-line: none;
 }
 
 .ul {
@@ -234,6 +232,13 @@ section {
     background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
     -webkit-background-clip: text;
     color: transparent;
+}
+
+.stino {
+    margin-bottom: 50px;
+    font-weight: bolder;
+    font-size: 2.25vw;
+    font-family: Ubuntu;
 }
 
 @media only screen and (max-width: 600px) {

@@ -13,7 +13,7 @@
                     </div><div class="row center">
                 {% endif %}
                 <div class="col-md-3 mb-3">
-                    <a href={{url_for('offer', off_title=off.offer_title)}}>
+                    <a style="text-decoration: none !important; text-decoration-line: none; color: black;" href={{url_for('offer', off_title=off.offer_title)}}>
                         <ul class="ul">
                             <img width="200vw" src={{off.img_url}}>
                         </ul>
@@ -27,27 +27,29 @@
             </div>
         </div>
     </section>
-    <hr class="rounded">
-    <section>
-        <p class="title">EXPIRED OFFERS</p>
-        <div class="container-fluid store">
-            <div class="row">
-                {% for off in exp %}
-                {% if loop.index0 % 6 == 0 and not loop.first %}
-                    </div><div class="row center">
-                {% endif %}
-                <div class="col-md-2 mb-3">
-                    <ul class="ul">
-                        <img width="125vw" src={{off.img_url}}>
-                    </ul>
-                    <ul class="ul">
-                        <p class="off_title">{{off.offer_title}}</p>
-                    </ul>
+    {% if exp != [] %}
+        <hr class="rounded">
+        <section>
+            <p class="title">EXPIRED OFFERS</p>
+            <div class="container-fluid store">
+                <div class="row">
+                    {% for off in exp %}
+                    {% if loop.index0 % 6 == 0 and not loop.first %}
+                        </div><div class="row center">
+                    {% endif %}
+                    <div class="col-md-2 mb-3">
+                        <ul class="ul">
+                            <img width="125vw" src={{off.img_url}}>
+                        </ul>
+                        <ul class="ul">
+                            <p class="off_title">{{off.offer_title}}</p>
+                        </ul>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
-        </div>
-    </section>
+        </section>
+    {% endif %}
 </body>
 </html>
 {% include 'footer.html' %}
