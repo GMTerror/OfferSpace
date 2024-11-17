@@ -62,7 +62,7 @@ def about():
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html", year=dt.date.today().year)
+    return render_template("contact.html", year=dt.date.today().year, phone="+91xxxxxxxxxx", email="lakshmysairam@gmail.com")
 
 @app.route("/store/<name>")
 def store(name):
