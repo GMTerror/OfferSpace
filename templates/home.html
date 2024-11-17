@@ -1,8 +1,7 @@
 {% include 'header.html' %}
 <body>
     <section id="head">
-        <span class="header">Fonsectetuer adipiscing elit</span>
-        <span class="header">Lorem ipsum odor amet</span>
+        <span class="header">Fonsectetuer adipiscing elit Lorem ipsum odor amet</span>
     </section>
     <hr class="rounded">
     {% if featured != [] %}
@@ -12,11 +11,13 @@
                 <div class="carousel-inner">
                     {% for f in featured %}
                         <div class="carousel-item {% if loop.first %}active{% endif %}">
-                            <img src="{{ f.img_url }}" class="d-block w-100" alt="Image {{ loop.index }}">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{f.store}}</h5>
-                                <p>{{f.offer_title}}</p>
-                            </div>
+                            <a style="text-decoration: none !important; text-decoration-line: none; color: black;" href={{url_for('offer', off_title=f.offer_title)}}>
+                                <img src="{{ f.img_url }}" class="d-block w-100" alt="Image {{ loop.index }}">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>{{f.store}}</h5>
+                                    <p>{{f.offer_title}}</p>
+                                </div>
+                            </a>
                         </div>
                     {% endfor %}
                 </div>

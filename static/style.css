@@ -125,6 +125,7 @@ body {
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     -webkit-background-clip: text;
     color: transparent;
+    text-align: center;
 }
 
 .rounded {
@@ -241,6 +242,37 @@ section {
     font-family: Ubuntu;
 }
 
+.abouts {
+    text-align: left;
+    display: inline-block;
+    font-size: 1.75vw;
+    font-family: Ubuntu;
+}
+
+#about {
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.smallh {
+    font-weight: bolder;
+    font-size: 2vw;
+    font-family: Ubuntu;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.no-mark {
+    list-style-type: none;
+    margin: 30px;
+}
+
+.pdf {
+    width: 70vw;
+    height: 700px;
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 600px) {
     .nav-list a {
         font-size: 10px;
@@ -253,7 +285,7 @@ section {
     }
 
     .title {
-        font-size: 30px;
+        font-size: 36px;
     }
 
     .row {
@@ -261,11 +293,40 @@ section {
     }
 
     .carousel {
-        width: 45vw;
+        width: 60vw;
         margin: 35px auto;
     }
 
     .header {
-        font-size: 5.75vw;
+        font-size: 9vw;
+    }
+
+    .smallh {
+        font-size: 5vw;
+    }
+
+    .abouts {
+        font-size: 4.5vw;
+    }
+
+    #about {
+        margin: 50px 45px;
+    }
+
+    #offer {
+        margin: 50px auto;
+    }
+
+    .header_ {
+        font-size: 8.75vw;
+    }
+
+    .stino {
+        font-size: 4.5vw;
+    }
+
+    .pdf {
+        width: 80vw;
+        height: 63.75vh;
     }
 }
