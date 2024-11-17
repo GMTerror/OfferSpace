@@ -76,3 +76,6 @@ def offer(off_title):
     validity()
     offer = [offer for offer in db.session.execute(db.Select(OfferWeb)).scalars() if offer.valid == 1 and offer.offer_title == off_title][0]
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
