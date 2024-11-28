@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///offers.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "postgresql+psycopg2://postgres:Indianart-18@localhost:5433/offers")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -37,14 +37,19 @@ def validity():
     for offer in db.session.execute(db.select(OfferWeb)).scalars():
         date_e = dt.datetime.strptime(offer.e_date, format).date()
         date_s = dt.datetime.strptime(offer.s_date, format).date()
-        date_fe = dt.datetime.strptime(offer.fe_date, format).date()
+        if offer.fe_date != 0:
+            date_fe = dt.datetime.strptime(offer.fe_date, format).date()
+        else:
+            date_fe = 0
         today = dt.datetime.today().date()
         if date_s > today or date_e < today:
             offer.valid = 0
         else:
             offer.valid = 1
-            if date_fe < today:
+            if date_fe < today or date_fe == 0:
                 offer.featured = 0
+            else:
+                offer.featured = 1
     db.session.commit()
 
 
@@ -62,7 +67,7 @@ def about():
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html", year=dt.date.today().year, phone="+91xxxxxxxxxx", email="lakshmysairam@gmail.com")
+    return render_template("contact.html", year=dt.date.today().year, phone="+91xxxxxxxxxx", email="example@gmail.com")
 
 @app.route("/store/<name>")
 def store(name):
@@ -78,4 +83,4 @@ def offer(off_title):
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
