@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "OfferWeb", "OfferWeb.pyproj", "{CA9F97F5-4C31-4C02-AABF-BA9F52A5C71D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA9F97F5-4C31-4C02-AABF-BA9F52A5C71D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9F97F5-4C31-4C02-AABF-BA9F52A5C71D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D65C9B0-EF04-4014-8C8E-8232C5DCB6E4}
+	EndGlobalSection
+EndGlobal

@@ -7,10 +7,10 @@ import sqlite3
 import datetime as dt
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dsoedyewyfgsydjsf7hgf'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///offers.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///offers.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -78,4 +78,4 @@ def offer(off_title):
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=False)
