@@ -1,16 +1,13 @@
-from markupsafe import escape
-from flask import Flask, render_template, redirect, url_for, flash, request, abort
+from flask import Flask, render_template
 import os
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import relationship
-import sqlite3
 import datetime as dt
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "postgresql+psycopg2://postgres:Indianart-18@localhost:5433/offers")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -38,7 +35,7 @@ def validity():
         date_e = dt.datetime.strptime(offer.e_date, format).date()
         date_s = dt.datetime.strptime(offer.s_date, format).date()
         if offer.fe_date != 0:
-            date_fe = dt.datetime.strptime(offer.fe_date, format).date()
+            date_fe = dt.datetime.strptime(offer.fe_date, format).date()    
         else:
             date_fe = 0
         today = dt.datetime.today().date()
@@ -83,4 +80,4 @@ def offer(off_title):
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
