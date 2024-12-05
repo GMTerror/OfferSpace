@@ -73,10 +73,10 @@ def store(name):
     e_offer = [offers for offers in db.session.execute(db.Select(OfferWeb)).scalars() if offers.valid != 1 and offers.store == name]
     return render_template("store.html", name=name, val=offer_store, exp=e_offer, year=dt.date.today().year)
 
-@app.route("/offer/<off_title>")
-def offer(off_title):
+@app.route("/offer/<int:off_id>")
+def offer(off_id):
     validity()
-    offer = [offer for offer in db.session.execute(db.Select(OfferWeb)).scalars() if offer.valid == 1 and offer.offer_title == off_title][0]
+    offer = [offer for offer in db.session.execute(db.Select(OfferWeb)).scalars() if offer.valid == 1 and offer.id == off_id][0]
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
