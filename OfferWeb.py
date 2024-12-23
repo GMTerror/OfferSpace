@@ -1,4 +1,4 @@
-'''from flask import Flask, render_template
+from flask import Flask, render_template
 import os
 from flask_sqlalchemy import SQLAlchemy
 import datetime as dt
@@ -83,4 +83,4 @@ def offer(off_id):
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
-    app.run()'''
+    app.run()
