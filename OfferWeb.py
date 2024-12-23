@@ -3,15 +3,7 @@ import os
 from flask_sqlalchemy import SQLAlchemy
 import datetime as dt
 
-
 app = Flask(__name__)
-@app.route('/')
-def hello():
-    return "Hello, World!"
-if __name__ == '__main__':
-    app.run()
-
-'''app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 ##CONNECT TO DB
@@ -91,4 +83,4 @@ def offer(off_id):
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))'''
+    app.run()
