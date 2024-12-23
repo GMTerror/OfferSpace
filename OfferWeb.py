@@ -1,4 +1,4 @@
-'''from flask import Flask, render_template
+from flask import Flask, render_template
 import os
 from flask_sqlalchemy import SQLAlchemy
 import datetime as dt
@@ -82,14 +82,5 @@ def offer(off_id):
     offer = [offer for offer in db.session.execute(db.Select(OfferWeb)).scalars() if offer.valid == 1 and offer.id == off_id][0]
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
-if __name__ == '__main__':
-    app.run()'''
-
-from flask import Flask, request
-app = Flask(__name__)
-@app.route('/')
-def index():
-    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-    return f"Your IP address is: {ip}"
 if __name__ == '__main__':
     app.run()
