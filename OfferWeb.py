@@ -17,6 +17,7 @@ class OfferWeb(db.Model):
     __tablename__ = "offer_list"
     id = db.Column(db.Integer, primary_key=True)
     store = db.Column(db.String(250), nullable=False)
+    region = db.Column(db.String(250), nullable=False)
     offer_title = db.Column(db.String(250), nullable=False)
     valid = db.Column(db.Integer, nullable=False)
     s_date = db.Column(db.String(250), nullable=False)
@@ -47,6 +48,8 @@ def validity():
                 offer.featured = 0
             else:
                 offer.featured = 1
+        if today > (date_e + dt.timedelta(days=30)):
+            db.session.delete(offer)
     db.session.commit()
 
 
