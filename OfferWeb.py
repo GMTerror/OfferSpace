@@ -86,4 +86,4 @@ def offer(off_id):
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5433)
