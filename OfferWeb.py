@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "postgresql://gmterror:manikandan2008@192.168.1.9:5433/offers?sslmode=require")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_POOL_RECYCLE'] = 1800 # 30 minutes
 app.config['SQLALCHEMY_POOL_TIMEOUT'] = 30 # 30 seconds
@@ -86,4 +86,4 @@ def offer(off_id):
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5433)
+    app.run(host='0.0.0.0')
