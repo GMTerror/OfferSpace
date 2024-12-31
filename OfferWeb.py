@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "postgresql://gmterror:manikandan2008@192.168.1.9:5433/offers?sslmode=require")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_POOL_RECYCLE'] = 1800 # 30 minutes
 app.config['SQLALCHEMY_POOL_TIMEOUT'] = 30 # 30 seconds

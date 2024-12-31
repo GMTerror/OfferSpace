@@ -40,7 +40,7 @@
     }
 }
   /* Main styles */
-body {
+/* body {
     margin-top: 13.5rem;
     font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
     text-align: center;
@@ -54,7 +54,7 @@ body {
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
     margin: 0;
-}
+} */
 
 .navbar {
     background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradient colors */
@@ -114,10 +114,10 @@ body {
     width: fit-content;
 }
 
-.header {
+/* .header {
     font-family: Audiowide;
     font-weight: 800;
-    font-size: 5.5vw;
+    font-size: 5vw;
     width: fit-content;
     margin: 0 auto;
     background: rgb(131,58,180);
@@ -125,7 +125,7 @@ body {
     -webkit-background-clip: text;
     color: transparent;
     text-align: center;
-}
+} */
 
 .rounded {
     border: 0;
