@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import os
 from flask_sqlalchemy import SQLAlchemy
 import datetime as dt
@@ -84,6 +84,10 @@ def offer(off_id):
     validity()
     offer = [offer for offer in db.session.execute(db.Select(OfferWeb)).scalars() if offer.valid == 1 and offer.id == off_id][0]
     return render_template("offer.html", offer=offer, year=dt.date.today().year)
+
+@app.route('/ads.txt')
+def ads_txt():
+    return send_from_directory(directory='.', filename='ads.txt')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
