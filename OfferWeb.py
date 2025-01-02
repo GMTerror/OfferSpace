@@ -87,7 +87,7 @@ def offer(off_id):
 
 @app.route('/ads.txt')
 def ads_txt():
-    return send_from_directory(directory='.', filename='ads.txt')
+    return send_from_directory(directory='.', path='ads.txt')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
