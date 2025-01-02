@@ -242,7 +242,14 @@ section {
 }
 
 .abouts {
-    text-align: justify;
+    text-align: justiify;
+    display: inline-block;
+    font-size: 2.25vw;
+    font-family: Ubuntu;
+}
+
+.about-i {
+    text-align: left;
     display: inline-block;
     font-size: 2.25vw;
     font-family: Ubuntu;
