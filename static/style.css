@@ -253,11 +253,13 @@ section {
 #about {
     margin-left: 75px;
     margin-right: 75px;
+    text-align: justify;
 }
 
 #contact {
     width: 75vw;
     margin: 50px auto;
+    text-align: justify;
 }
 
 .smallh {
